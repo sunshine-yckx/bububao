@@ -29,6 +29,5 @@ jobs:
               run: |
                   node BBB.js
               env:
-                  JD_COOKIE: ${{ github.event.client_payload.JD_COOKIE || secrets.JD_COOKIE }}
-                  PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
-                  
+                  BBB_COOKIE: ${{ github.event.client_payload.BBB_COOKIE || secrets.BBB_COOKIE }}
+              

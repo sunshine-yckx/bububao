@@ -10,7 +10,7 @@ on:
     watch:
         types: [started]
     repository_dispatch:
-        types: jd_bean_change
+        types: bbb_change
 
 jobs:
     build:
@@ -27,7 +27,7 @@ jobs:
                   npm install
             - name: "运行 【步步宝】"
               run: |
-                  node onlyOneExecute.js
+                  node BBB.js
               env:
                   JD_COOKIE: ${{ github.event.client_payload.JD_COOKIE || secrets.JD_COOKIE }}
                   PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}

@@ -37,7 +37,7 @@ if ($.isNode()) {
       console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
 }
 
-
+CookieVal = {"tokenstr":"416CA5153C606C40B311D241D527382G1611312036","Accept":"*/*","version":"10","idfa":"F44E9475-6781-4465-A350-A9B59003F3D5","Host":"bububao.duoshoutuan.com","Accept-Language":"zh-cn","platform":"2","imei":"4C54B343-5BD0-4891-AE3D-7953F81DA4F2","Content-Length":"0","User-Agent":"BBB/132 CFNetwork/1206 Darwin/20.1.0","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","store":"appstore"}
 
 now = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);  
 

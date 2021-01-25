@@ -25,19 +25,38 @@ surge
 hostname = bububao.duoshoutuan.com,
 
 */
+/*
+adwktt
+轉載備註名字
+*/
 
 
 
 const $ = new Env('步步寶')
+
+const CookieValArr = [];
 let notice = ''
 let CookieVal = $.getdata('bbb_ck')
-    
+
 if ($.isNode()) {
+  if (process.env.BBB_ck && process.env.BBB_ck.indexOf('#') > -1) {
+   CookieVal = process.env.BBB_ck.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.BBB_ck && process.env.BBB_ck.indexOf('\n') > -1) {
+   CookieVal = process.env.BBB_ck.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   CookieVal = process.env.BBB_ck.split()
+  };
+  Object.keys(CookieVal).forEach((item) => {
+        if (CookieVal[item]) {
+          CookieValArr.push(CookieVal[item])
+        }
+    });
       console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
       console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
 }
-
-CookieVal = {"tokenstr":"416CA5153C606C40B311D241D527382G1611312036","Accept":"*/*","version":"10","idfa":"F44E9475-6781-4465-A350-A9B59003F3D5","Host":"bububao.duoshoutuan.com","Accept-Language":"zh-cn","platform":"2","imei":"4C54B343-5BD0-4891-AE3D-7953F81DA4F2","Content-Length":"0","User-Agent":"BBB/132 CFNetwork/1206 Darwin/20.1.0","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","store":"appstore"}
 
 now = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);  
 

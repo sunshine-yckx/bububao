@@ -23,7 +23,7 @@ jobs:
           node-version: 12.x
       - name: npm install
         run: |
-          git checkout master
+          git checkout main
           cd ~/BD
           npm install
       - name: '运行 【步步宝2.14】'
